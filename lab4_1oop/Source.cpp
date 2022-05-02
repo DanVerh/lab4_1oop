@@ -1,12 +1,15 @@
 #include <iostream>
+#include "Norma.hpp"
 #include "Complex.hpp"
 #include "Vector.hpp"
 #include "Array.hpp"
+#include <typeinfo>
 #include <complex.h>
 
 using namespace std;
 
 int main(){
+    
     Complex complex_obj;
     complex_obj.SetX(2);
     complex_obj.SetY(3);
@@ -19,9 +22,8 @@ int main(){
     
     Array arr1;
     arr1.SetArr(1, -2, -3, -1);
-    cout << arr1.Norma();
+    cout << arr1.Norma() << endl;
     cout << endl;
-    
     
     NormaClass **check = new NormaClass*[3];
     check[0] = new Complex();
@@ -31,6 +33,14 @@ int main(){
     check[0]->Norma();
     check[1]->Norma();
     check[2]->Norma();
+    
+    Complex* pd = new Complex;
+    NormaClass* pb = pd;
+    
+    cout << typeid(pb).name()<<endl;
+    cout << typeid(*pb).name()<<endl;
+    cout << typeid(pd).name()<<endl;
+    cout << typeid(*pd).name()<<endl;
     
     
     return 0;

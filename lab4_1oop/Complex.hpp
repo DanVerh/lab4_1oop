@@ -17,6 +17,9 @@ public:
     double GetY() const { return y; }
     complex<double> GetZ() const { return z; }
     
+    Complex();
+    Complex(double, double);
+    
     virtual double Norma();
     
 };
